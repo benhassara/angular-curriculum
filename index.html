@@ -36,6 +36,37 @@
   <p>Yelling: <strong>{{response | uppercase}}</strong></p>
   <p>Whispering: <em>{{response | lowercase}}</em></p>
 
+  <span>How many digits of pi?</span><select id="digits" ng-model="digits">
+    <option selected="selected">1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+    <option>6</option>
+    <option>7</option>
+  </select>
+
+  <p>Here you go! <ng-pluralize count="digits"
+                                when="{'1': 'The first {{digits}} digit of pi!',
+                                       'other': 'The first {{digits}} digits of pi!'}">
+                  </ng-pluralize></p>
+  <p>{{ 3.14159265359 | number:digits}}</p>
+
+  <br>
+
+  <h3>Tip Calculator</h3>
+  <span>How much was your bill?</span><input type="text" ng-model="bill">
+  <p>How much do you want to tip?</p>
+  <select ng-model="tip">
+    <option selected="selected" value="0.1">10%</option>
+    <option value="0.15">15%</option>
+    <option value="0.18">18%</option>
+    <option value="0.2">20%</option>
+  </select>
+  <h4>Subtotal: {{bill | currency}}</h4>
+  <h4>Tip: {{bill * tip | currency}}</h4>
+  <h4>Total: {{1 * bill + (bill * tip) | currency}}</h4>
+
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
   <!-- <script type="text/javascript" src="update-without-angular.js"></script> -->
 </body>
