@@ -1,15 +1,42 @@
 <!DOCTYPE html>
 <html ng-app>
 <head>
+  <meta charset="utf-8">
   <title>{{ greeting }} World</title>
 </head>
 <body>
 
-<p>{{1 + 6}}<p>
-<br>
-<p>Say something to the world <input type="text" ng-model="greeting" ng-init="greeting='Hello, '"></p>
-<p>{{ greeting }} world!</p>
+  <p>{{1 + 6}}</p>
+  <br>
+  <p>Say something to the world <input type="text" ng-model="greeting" ng-init="greeting='Hello, '"></p>
+  <p>{{ greeting }} world!</p>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
+  <input id="in-name" type="text" placeholder="What is your name?" ng-model="name">
+
+  <h1>My name is: {{name}}</h1>
+
+  <select ng-model="pets">
+    <option>Dogs</option>
+    <option>Cats</option>
+    <option>Dogs and Cats</option>
+  </select>
+
+  <h3>{{pets}}</h3>
+  <br>
+
+  <h3>Testing filter:</h3>
+  <h4>{{3.14159265359 | currency}}</h4>
+  <h4>{{3.14159265359 | currency:"€"}}</h4>
+  <h4>3 decimals: {{3.14159265359 | number:3}}</h4>
+  <h4>6 decimals: {{3.14159265359 | number:6}}</h4>
+  <h4>1 decimal: {{3.14159265359 | number:1}}</h4>
+
+  <h3>Please say something:</h3>
+  <input type="text" ng-model="response" placeholder="Say something...">
+  <p>Yelling: <strong>{{response | uppercase}}</strong></p>
+  <p>Whispering: <em>{{response | lowercase}}</em></p>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
+  <!-- <script type="text/javascript" src="update-without-angular.js"></script> -->
 </body>
 </html>
