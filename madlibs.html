@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app>
+  <head>
+    <meta charset="utf-8">
+    <title>Angular Madlibs</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  </head>
+  <body>
+
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-xs-8 col-xs-offset-2">
+          <div class="text-center"><h1>Madlibs</h1></div>
+          <form>
+            <div class="form-group">
+              <label for="boyName">Boy's Name</label>
+              <input class="form-control" type="text" placeholder="Enter a boy's name..." ng-model="boyName" id="boyName">
+            </div>
+            <div class="form-group">
+              <label for="adj">Adjective</label>
+              <input class="form-control" type="text" placeholder="Enter an adjective..." ng-model="adj" id="adj">
+            </div>
+            <div class="form-group">
+              <label for="pluralNoun1">Plural Noun</label>
+              <input class="form-control" type="text" placeholder="Enter a plural noun..." ng-model="pluralNoun1" id="pluralNoun1">
+            </div>
+            <div class="form-group">
+              <label for="pluralInsect">An insect, plural</label>
+              <input class="form-control" type="text" placeholder="Enter an insect, plural..." ng-model="pluralInsect" id="pluralInsect">
+            </div>
+            <div class="form-group">
+              <label for="pluralNoun2">Plural Noun</label>
+              <input class="form-control" type="text" placeholder="Enter a plural noun..." ng-model="pluralNoun2" id="pluralNoun2">
+            </div>
+            <div class="form-group">
+              <label for="verb">A verb ending in "s"</label>
+              <input class="form-control" type="text" placeholder="Enter a verb that ends with 's'..." ng-model="verb" id="verb">
+            </div>
+          </form>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <h2>These words are CRAZY! ZANY even!</h2>
+          <p>
+            I'm in love with {{boyName | uppercase}}. He's so {{adj | uppercase}}! He has big flat {{pluralNoun1 | uppercase}}, and when our {{pluralInsect | uppercase}} meet, I get {{pluralNoun2 | uppercase}} in my stomach.  I've fallen for him like a ton of {{verb | uppercase}}, and he shuffles for me, too.  But I think he's got another girlfriend.  What should I do?
+          </p>
+        </div>
+      </div>
+
+    </div>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
+  </body>
+</html>
