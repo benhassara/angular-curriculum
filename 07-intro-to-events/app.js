@@ -20,22 +20,34 @@ app.controller('EventsExercises', function($scope) {
   };
 
   // ping pong score keeper
-  $scope.player1 = new Player(true, 'p1');
-  $scope.player2 = new Player(false, 'p2');
+  $scope.player1 = new Player(true, 'Player 1', 'p1');
+  $scope.player2 = new Player(false, 'Player 2', 'p2');
   $scope.points = $scope.player1.score + $scope.player2.score;
+  $scope.resetGame = resetGame;
+  $scope.toggleEdit = toggleEdit;
 });
 
-function Player(firstServe, name) {
+function Player(firstServe, name, id) {
   // firstServe is a bool determine whether the player has the first serve
   this.name = name;
+  this.id = id;
   this.score = 0;
   this.gamesWon = 0;
   this.serving = firstServe;
+  this.edit = false;
 }
 
 Player.prototype.scored = function (opponent) {
+  // don't let scores go higher than 11
+  if (this.score === 11 || opponent.score === 11)
+    return;
+
   this.score += 1;
-  this.hasServe(opponent);
+  if (this.score < 11)
+    this.hasServe(opponent);
+  else {
+    endGame(this, opponent);
+  }
 };
 
 Player.prototype.wonGame = function () {
@@ -52,3 +64,28 @@ Player.prototype.hasServe = function (opponent) {
     opponent.serving = tmp;
   }
 };
+
+//utility
+
+// handle end of a game
+function endGame(p1, p2) {
+  if (p1.score === 11)
+    p1.wonGame();
+  else
+    p2.wonGame();
+
+  p1.serving = false;
+  p2.serving = false;
+}
+
+// reset for a new game, keep gamesWon count
+function resetGame(p1, p2) {
+  p1.score = 0;
+  p2.score = 0;
+  p1.serving = true;
+}
+
+// toggle name editing fields for players
+function toggleEdit(player) {
+  player.edit = !player.edit;
+}
