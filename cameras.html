@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="cameraShop">
+  <head>
+    <meta charset="utf-8">
+    <title>Camera Shop</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <link rel="stylesheet" href="cameras.css" media="screen" charset="utf-8">
+  </head>
+  <body>
+
+    <div class="container">
+
+      <h1>Camera Shop</h1>
+
+      <select ng-model="order">
+        <option selected="selected" value="price">Price</option>
+        <option value="rating">Rating</option>
+      </select>
+
+      <div ng-controller="sortBy">
+        <div ng-repeat="camera in cameras | orderBy:order">
+          <h4>{{camera.title}}</h4>
+          <p ng-class="{highlight: camera.onSale}">Price: {{camera.price}} <span ng-if="camera.onSale">ON SALE!</span></p>
+          <p>Rating: {{camera.rating}}</p>
+          <img ng-src="{{camera.image}}" alt="{{camera.title}}" />
+        </div>
+      </div>
+
+    </div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-sanitize.min.js" charset="utf-8"></script> -->
+    <script type="text/javascript" src="cameras.js" charset="utf-8"></script>
+  </body>
+</html>

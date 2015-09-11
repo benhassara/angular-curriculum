@@ -1,8 +1,21 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="myApp">
 <head>
   <meta charset="utf-8">
   <title>{{ greeting }} World</title>
+  <style>
+    .highlight {
+      background-color: yellow;
+    }
+
+    .invalid {
+      color: red;
+    }
+
+    .valid {
+      color: green;
+    }
+  </style>
 </head>
 <body>
 
@@ -67,7 +80,57 @@
   <h4>Tip: {{bill * tip | currency}}</h4>
   <h4>Total: {{1 * bill + (bill * tip) | currency}}</h4>
 
+  <h3>ng-repeat Tests</h3>
+  <div ng-controller="testController">
+    <ul>
+      <li ng-repeat="name in names">{{name}}</li>
+    </ul>
+    <br>
+    <ul ng-repeat="name in names">
+      <li>{{name}}</li>
+    </ul>
+    <br>
+
+    <h3>Symbols</h3>
+    <ul>
+      <li ng-repeat="symbol in symbols" ng-bind-html="symbol"></li>
+    </ul>
+    <br>
+
+    <h3>Dupes</h3>
+    <ul>
+      <li ng-repeat="dupe in dupes track by $index">{{dupe}}</li>
+    </ul>
+    <br>
+
+    <h3>Keys</h3>
+    <ul>
+      <li ng-repeat="(key, val) in keys">{{key}}</li>
+    </ul>
+    <br>
+
+    <h3>Password Validator</h3>
+    <input type="password" ng-model="pw">
+    <p ng-class="{invalid: pw.length < 6, valid: pw.length >= 6}">
+      Your password is {{pw.length}} characters.
+    </p>
+    <button type="button" ng-hide="pw.length < 6">Sign Up!</button>
+    <p ng-show="pw.length < 6">
+      Password is invalid.
+    </p>
+  </div>
+
+  <!-- Angular actually applies the class ng-hide when this is true-->
+  <!-- the ng-hide class sets the elements display: none -->
+  <p ng-hide="3 + 2 == 5">Hidden</p>
+  <br>
+
+  <h3>Using <code>ng-class</code></h3>
+  <div ng-class="{highlight: 4 + 4 == 8}"> 4 + 4 = 8</div>
+  <div ng-class="{highlight: 4 + 4 == 10}">4 + 4 = 10</div>
+
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
-  <!-- <script type="text/javascript" src="update-without-angular.js"></script> -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-sanitize.min.js" charset="utf-8"></script>
+  <script type="text/javascript" src="test.js"></script>
 </body>
 </html>
