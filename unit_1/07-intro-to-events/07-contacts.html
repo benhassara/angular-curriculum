@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Contacts App</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://bootswatch.com/journal/bootstrap.min.css" charset="utf-8">
   </head>
   <body>
 
@@ -49,7 +49,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr ng-repeat="contact in contacts | filter:searchString">
+              <tr ng-repeat="contact in contacts | filter:searchString | orderBy:'name'">
                 <td>{{contact.name}}</td>
                 <td>{{contact.email}}</td>
                 <td>{{contact.phone}}</td>
