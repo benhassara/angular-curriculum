@@ -1,0 +1,20 @@
+.css-form input.ng-invalid.ng-touched {
+  background-color: #F57A00;
+}
+
+.css-form input.ng-valid.ng-touched {
+  background-color: #22B24C;
+}
+
+.img-post {
+  max-height: 100px;
+}
+
+.list-group {
+  margin-top: 5px;
+}
+
+.list-group-item {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
