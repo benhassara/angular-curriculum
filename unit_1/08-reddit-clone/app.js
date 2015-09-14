@@ -47,12 +47,19 @@ angular.module('redditClone', ['angularMoment'])
   };
 
   // Update a post
+  // obj includes the date for the post, and the changes to make
   factory.updatePost = function(obj) {
     var storedIndex = this.getPost(obj.date).index;
     for (var key in obj) {
       if (key !== 'date')
       posts[storedIndex].key = obj.key;
     }
+  };
+
+  // add a comment to a post
+  factory.addComment = function(obj) {
+    var storedIndex = this.getPost(obj.date).index;
+    posts[storedIndex].comments.push(obj.comment);
   };
 
   return factory;
@@ -89,6 +96,8 @@ angular.module('redditClone', ['angularMoment'])
     $scope.post.votes--;
     posts.updatePost({date: $scope.post.date, votes: $scope.post.votes});
   };
+
+  $scope.addComment = function() {};
 }]);
 
 // Post object - represents each post on the page
