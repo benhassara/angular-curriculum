@@ -119,7 +119,9 @@
                 </div>
                 <div class="media-body">
                   <h4 class="media-heading">
-                    {{ post.votes }}
+                    <span ng-class="{'votes-pos': post.votes > 0, 'votes-neg': post.votes < 0}">
+                      {{ post.votes }}
+                    </span>
                     <span ng-click="upvote()" class="glyphicon glyphicon-triangle-top"></span>
                     <span ng-click="downvote()" class="glyphicon glyphicon-triangle-bottom"></span>
                     {{ post.title }}
@@ -141,8 +143,18 @@
                                      'other': '{} Comments'}">
                 </ng-pluralize>
               </a>
-              <div class="collapse" id="{{post.date.getTime()}}">
+              <div class="collapse clearfix" id="{{post.date.getTime()}}">
+                <input type="text" ng-model="newCommentUser" placeholder="Username" class="form-control comment-reply">
+                <textarea class="form-control comment-reply" rows="4" ng-model="newCommentText" required></textarea>
+                <button type="button" ng-click="addComment()" class="btn btn-default btn-xs comment-reply">Reply</button>
                 <ul class="list-group">
+                  <li class="list-group-item" ng-repeat="comment in post.comments">
+                    <h5 class="list-group-item-heading">
+                      {{comment.user}}
+                      <small am-time-ago="comment.timestamp" class="pull-right"></small>
+                    </h5>
+                    <p class="list-group-item-text">{{comment.text}}</p>
+                  </li>
                 </ul>
               </div>
             </div>

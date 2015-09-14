@@ -27,6 +27,9 @@ angular.module('redditClone', ['angularMoment'])
     })
   ];
 
+  // current user, for commenting
+  var user = '';
+
   // Add a post to the page
   factory.addPost = function(input) {
     posts.push(new Post(input));
@@ -56,10 +59,14 @@ angular.module('redditClone', ['angularMoment'])
     }
   };
 
-  // add a comment to a post
-  factory.addComment = function(obj) {
-    var storedIndex = this.getPost(obj.date).index;
-    posts[storedIndex].comments.push(obj.comment);
+  // get the current user
+  factory.getCurrentUser = function() {
+    return user;
+  };
+
+  // change the current user
+  factory.changeCurrentUser = function(name) {
+    user = name;
   };
 
   return factory;
@@ -87,6 +94,10 @@ angular.module('redditClone', ['angularMoment'])
 
 .controller('SinglePost', ['$scope', 'posts', function($scope, posts) {
 
+  // if there's a current user, fill in username field for each post's comment section
+  if (posts.getCurrentUser !== '')
+    $scope.newCommentUser = posts.getCurrentUser();
+
   $scope.upvote = function() {
     $scope.post.votes++;
     posts.updatePost({date: $scope.post.date, votes: $scope.post.votes});
@@ -97,7 +108,21 @@ angular.module('redditClone', ['angularMoment'])
     posts.updatePost({date: $scope.post.date, votes: $scope.post.votes});
   };
 
-  $scope.addComment = function() {};
+  $scope.addComment = function() {
+    var user = posts.getCurrentUser;
+
+    //if current user isn't set, or is different than input, reset
+    if (user === '' || user !== $scope.newCommentUser)
+      posts.changeCurrentUser($scope.newCommentUser);
+
+    $scope.post.comments.push({
+      user: $scope.newCommentUser,
+      text: $scope.newCommentText,
+      timestamp: new Date()
+    });
+    $scope.newCommentText = '';
+    posts.updatePost({date: $scope.post.date, comments: $scope.post.comments});
+  };
 }]);
 
 // Post object - represents each post on the page
@@ -111,5 +136,5 @@ function Post(obj) {
   // additional functionality
   this.comments = [];
   this.votes = 0;
-  this.date = new Date(obj.date) || Date.now();
+  this.date = new Date(obj.date) || new Date();
 }
