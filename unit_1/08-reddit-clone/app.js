@@ -1,4 +1,4 @@
-angular.module('redditClone', ['angularMoment'])
+angular.module('redditClone', ['angularMoment', 'ngAnimate'])
 
 .factory('posts', function() {
   var factory = {};
@@ -64,14 +64,26 @@ angular.module('redditClone', ['angularMoment'])
 .factory('navSearch', function(){
   var factory = {};
   // hold the nav bar search string
-  factory.query = "";
+  factory.query = '';
+  factory.sort = 'votes';
+  factory.sortMode = true;
 
   return factory;
 })
 
 .controller('NavBar', ['$scope', 'navSearch', function($scope, navSearch) {
   // expose for filtering posts
+  $scope.sortString = 'Votes';
   $scope.navSearch = navSearch;
+
+  $scope.setSort = function(str) {
+    $scope.navSearch.sort = str.toLowerCase();
+    $scope.sortString = str;
+  };
+
+  $scope.setSortMode = function(bool) {
+    $scope.navSearch.sortMode = bool;
+  };
 }])
 
 // To handle the post submission form
