@@ -1,0 +1,9 @@
+.jumbotron {
+  background-image: url(http://ak-hdl.buzzfed.com/static/2015-01/12/15/enhanced/webdr12/enhanced-25074-1421093087-6.jpg);
+  background-repeat: repeat space;
+  background-size: contain;
+}
+
+.jumbotron p, .jumbotron h1 {
+  color: white;
+}
