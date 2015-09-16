@@ -12,5 +12,6 @@ angular.module('routingApp', ['ngRoute'])
       })
       .otherwise('/');
 
+    // removes the # from routes in the address bar
     // $locationProvider.html5Mode(true);
   });

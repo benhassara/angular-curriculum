@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="row">
+    <h1 class="text-center">Projects</h1>
+  </div>
+  <br>
+  <div class="row">
+    <div ng-repeat="proj in projects" class="col-xs-12 col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <img class="img-responsive thumb-resume" src="{{proj.image}}" alt="{{proj.title}}"/>
+        <div class="caption">
+          <h3>{{proj.title}}</h3>
+          <p>{{proj.text}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
