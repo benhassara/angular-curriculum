@@ -1,4 +1,4 @@
-angular.module('redditClone', ['angularMoment', 'ngAnimate'])
+angular.module('redditClone', ['ngAnimate', 'angularMoment'])
 
 .factory('posts', function() {
   var factory = {};
@@ -58,6 +58,10 @@ angular.module('redditClone', ['angularMoment', 'ngAnimate'])
     }
   };
 
+  factory.removePost = function() {
+    posts.pop();
+  };
+
   return factory;
 })
 
@@ -104,6 +108,7 @@ angular.module('redditClone', ['angularMoment', 'ngAnimate'])
 // control the collection of posts
 .controller('AllPosts', ['$scope', 'posts', 'navSearch', function($scope, posts, navSearch) {
   $scope.navSearch = navSearch;
+  $scope.postsFact = posts;
   $scope.posts = posts.getAllPosts();
 }])
 
