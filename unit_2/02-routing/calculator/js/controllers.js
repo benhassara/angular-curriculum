@@ -6,7 +6,7 @@ angular.module('calculator')
   .controller('MultiplyCtrl', MultiplyCtrl);
 
 // inject dependencies
-HomeCtrl.$inject = ['$scope', 'signs']
+HomeCtrl.$inject = ['$scope', 'signs'];
 AddCtrl.$inject = ['$scope', '$routeParams', 'signs'];
 SubCtrl.$inject = ['$scope', '$routeParams', 'signs'];
 DivideCtrl.$inject = ['$scope', '$routeParams', 'signs'];
