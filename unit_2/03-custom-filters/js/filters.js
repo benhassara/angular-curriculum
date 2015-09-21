@@ -1,7 +1,8 @@
 angular.module('customFilters')
   .filter('kebab', kebab)
   .filter('camel', camel)
-  .filter('pigLatin', pigLatin);
+  .filter('pigLatin', pigLatin)
+  .filter('redact', redact);
 
 /** converts a string from snake_case to kebab-case */
 function kebab() {
@@ -42,8 +43,16 @@ function pigLatin() {
   };
 }
 
-// helpers
+/** replaces input with REDACTED in given expression */
+function redact() {
+  return function(input, tokenToRedact) {
+    var re = new RegExp(tokenToRedact, 'g');
+    return input.replace(re, 'REDACTED');
+  };
+}
 
+// helpers
+/** converts a single word to Pig Latin */
 function pigifyWord(word) {
   var splitUp;
   var lower = word.toLowerCase();
