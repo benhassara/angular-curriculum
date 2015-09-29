@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='railsMessaging'>
+<head>
+  <meta charset="utf-8">
+  <title>Rails Messaging</title>
+
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body ng-controller="MessagingCtrl">
+  <!-- sample angular code -->
+  <div class="container">
+
+      <div class="col-xs-12">
+        <div class="text-center">
+          <h1>Rails Messaging App</h1>
+          <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#postMsgModal">
+            Add a message
+          </button>
+        </div>
+        <hr>
+
+        <blockquote ng-repeat="message in messages">
+          <p>
+            {{message.content}}
+          </p>
+          <footer><i class="fa fa-user"></i>  {{message.name}}</footer>
+        </blockquote>
+      </div>
+  </div>
+
+  <!-- submission modal -->
+  <div class="modal fade" id="postMsgModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Add a message</h4>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="nameInput">Name</label>
+              <input ng-model="newPost.name" type="text" class="form-control" id="nameInput" placeholder="Name">
+            </div>
+            <div class="form-group">
+              <label for="messageInput">Message</label>
+              <textarea ng-model="newPost.content" class="form-control" rows="4" cols="40"></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button ng-click="publishMessage()" data-toggle="modal" data-target="#postMsgModal" type="button" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <script type="text/javascript" src="js/angular.js"></script>
+  <script type="text/javascript" src="js/controllers.js" charset="utf-8"></script>
+</body>
+</html>
