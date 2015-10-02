@@ -1,0 +1,22 @@
+<div class="container">
+	<h3 class="text-center">results for: '{{query}}'</h3>
+
+	<div class="row" ng-repeat="result in results">
+
+		<!-- <div class="col-xs-4" ng-repeat="result in results"> -->
+    <div class="well">
+  			<div class="media">
+          <div class="media-left media-middle">
+            <i class="media-object fa fa-film text-primary" alt="Film"></i>
+          </div>
+          <div class="media-body">
+            <h4 class="media-heading text-info">{{result.Title}}</h4>
+            <p>Year: {{result.Year}}</p>
+          </div>
+        </div>
+    </div>
+		<!-- </div> -->
+
+	</div>
+
+</div>
