@@ -4,41 +4,39 @@
   </div>
 
   <div class="row">
-    <div class="media">
-      <div class="media-left media-middle">
-        <img class="media-object img-thumbnail" ng-src="{{movie.Poster}}" alt={{movie.Title}} />
+      <div class="col-xs-4">
+        <img class="img-thumbnail" ng-src="{{movie.Poster}}" alt={{movie.Title}} />
       </div>
-      <div class="media-body">
-        <div class="row">
-          <dl class="dl-horizontal">
-            <dt>Director</dt>
-            <dd>{{movie.Director}}</dd>
+      <div class="col-xs-8">
+        <dl class="dl-horizontal">
+          <dt>Director</dt>
+          <dd>{{movie.Director}}</dd>
 
-            <dt>Genre</dt>
-            <dd>{{movie.Genre}}</dd>
+          <dt>Genre</dt>
+          <dd>{{movie.Genre}}</dd>
 
-            <dt>Rated</dt>
-            <dd>{{movie.Rated}}</dd>
+          <dt>Rated</dt>
+          <dd>{{movie.Rated}}</dd>
 
-            <dt>Release Date</dt>
-            <dd>{{movie.Released}}</dd>
+          <dt>Release Date</dt>
+          <dd>{{movie.Released}}</dd>
 
-            <dt>Notable Actors</dt>
-            <dd>{{movie.Actors}}</dd>
+          <dt>Notable Actors</dt>
+          <dd>{{movie.Actors}}</dd>
 
-            <dt>Writers</dt>
-            <dd>{{movie.Writer}}</dd>
+          <dt>Writers</dt>
+          <dd>{{movie.Writer}}</dd>
 
-            <dt>Length</dt>
-            <dd>{{movie.Runtime}}</dd>
+          <dt>Length</dt>
+          <dd>{{movie.Runtime}}</dd>
 
-            <dt>IMDb Rating</dt>
-            <dd>{{movie.imdbRating}}, with {{movie.imdbVotes}} votes</dd>
-          </dl>
-          <p class="lead">{{movie.Awards}}</p>
-          <p>{{movie.Plot}}</p>
-        </div>
+          <dt>IMDb Rating</dt>
+          <dd>{{movie.imdbRating}}, with {{movie.imdbVotes}} votes</dd>
+        </dl>
       </div>
-    </div>
+  </div>
+  <div class="row text-center">
+    <p class="lead">{{movie.Awards}}</p>
+    <p>{{movie.Plot}}</p>
   </div>
 </div>
