@@ -20,11 +20,8 @@ function moviesFact($http) {
       });
   };
 
-  obj.getDetails = function(movie) {
-    $http.get('http://www.omdbapi.com/?i' + movie.imdbID)
-      .then(function(response) {
-        // TODO
-      });
+  obj.getDetails = function(id) {
+    return $http.get('http://www.omdbapi.com/?i=' + id);
   };
 
   obj.getResults = function() {
@@ -47,8 +44,9 @@ function router($route, $location) {
     $location.path('/search');
   };
 
-  obj.details = function(movie) {
-    $route.updateParams({imdbID: movie.})
+  obj.details = function(id) {
+    $route.updateParams({imdbID: id});
+    $location.path('/details/' + id);
   };
 
   return obj;

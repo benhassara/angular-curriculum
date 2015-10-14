@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="page-header text-center">
+    <h1>{{movie.Title}}</h1>
+  </div>
+
+  <div class="row">
+    <div class="media">
+      <div class="media-left media-middle">
+        <img class="media-object img-thumbnail" ng-src="{{movie.Poster}}" alt={{movie.Title}} />
+      </div>
+      <div class="media-body">
+        <div class="row">
+          <dl class="dl-horizontal">
+            <dt>Director</dt>
+            <dd>{{movie.Director}}</dd>
+
+            <dt>Genre</dt>
+            <dd>{{movie.Genre}}</dd>
+
+            <dt>Rated</dt>
+            <dd>{{movie.Rated}}</dd>
+
+            <dt>Release Date</dt>
+            <dd>{{movie.Released}}</dd>
+
+            <dt>Notable Actors</dt>
+            <dd>{{movie.Actors}}</dd>
+
+            <dt>Writers</dt>
+            <dd>{{movie.Writer}}</dd>
+
+            <dt>Length</dt>
+            <dd>{{movie.Runtime}}</dd>
+
+            <dt>IMDb Rating</dt>
+            <dd>{{movie.imdbRating}}, with {{movie.imdbVotes}} votes</dd>
+          </dl>
+          <p class="lead">{{movie.Awards}}</p>
+          <p>{{movie.Plot}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

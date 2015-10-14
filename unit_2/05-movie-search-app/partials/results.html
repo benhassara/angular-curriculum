@@ -3,19 +3,19 @@
 
 	<div class="row" ng-repeat="result in results">
 
-		<!-- <div class="col-xs-4" ng-repeat="result in results"> -->
     <div class="well">
   			<div class="media">
           <div class="media-left media-middle">
             <i class="media-object fa fa-film text-primary" alt="Film"></i>
           </div>
           <div class="media-body">
-            <h4 class="media-heading text-info">{{result.Title}}</h4>
+            <h4 class="media-heading text-info">
+							<a ng-click="getDetails($event)" data-imdbID={{result.imdbID}}>{{result.Title}}</a>
+						</h4>
             <p>Year: {{result.Year}}</p>
           </div>
         </div>
     </div>
-		<!-- </div> -->
 
 	</div>
 
