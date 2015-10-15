@@ -13,11 +13,11 @@ function moviesFact($http) {
   var obj = {};
 
   obj.searchTitle = function(query) {
-    $http.get('http://www.omdbapi.com/?s=' + query)
-      .then(function(response) {
-        _searchTerm = query;
-        _searchResults = response.data.Search;
-      });
+    return $http.get('http://www.omdbapi.com/?s=' + query);
+      // .then(function(response) {
+      //   _searchTerm = query;
+      //   _searchResults = response.data.Search;
+      // });
   };
 
   obj.getDetails = function(id) {
@@ -28,8 +28,16 @@ function moviesFact($http) {
     return _searchResults;
   };
 
+  obj.setResults = function(results) {
+    _searchResults = results;
+  };
+
   obj.getQuery = function() {
     return _searchTerm;
+  };
+
+  obj.setQuery = function(query) {
+    _searchTerm = query;
   };
 
   return obj;
@@ -45,7 +53,7 @@ function router($route, $location) {
   };
 
   obj.details = function(id) {
-    $route.updateParams({imdbID: id});
+    // $route.updateParams({imdbID: id});
     $location.path('/details/' + id);
   };
 

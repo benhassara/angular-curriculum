@@ -11,8 +11,12 @@ DetailsCtrl.$inject = ['$scope', 'moviesFact', '$routeParams'];
 function SearchCtrl($scope, moviesFact, router) {
 
   $scope.search = function() {
-    moviesFact.searchTitle($scope.query);
-    router.search($scope.query);
+    moviesFact.searchTitle($scope.query)
+      .then(function(response) {
+        moviesFact.setResults(response.data.Search);
+        moviesFact.setQuery($scope.query);
+        router.search($scope.query);
+      });
   };
 }
 
