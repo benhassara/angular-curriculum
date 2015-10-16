@@ -11,7 +11,7 @@ DetailsCtrl.$inject = ['$scope', 'moviesFact', '$routeParams'];
 function SearchCtrl($scope, moviesFact, router) {
 
   $scope.search = function() {
-    moviesFact.searchTitle($scope.query)
+    moviesFact.searchTitle($scope.query, $scope.rottenTomatoes)
       .then(function(response) {
         moviesFact.setResults(response.data.Search);
         moviesFact.setQuery($scope.query);
@@ -33,7 +33,7 @@ function SearchResultsCtrl($scope, moviesFact, router) {
 }
 
 function DetailsCtrl($scope, moviesFact, $routeParams) {
-  moviesFact.getDetails($routeParams.imdbID)
+  moviesFact.getDetails($routeParams.imdbID, moviesFact.getTomatoes())
     .then(function(result) {
       console.log(result);
       $scope.movie = result.data;

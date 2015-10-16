@@ -34,11 +34,22 @@
 
           <dt>IMDb Rating</dt>
           <dd>{{movie.imdbRating}}, with {{movie.imdbVotes}} votes</dd>
+
+          <dt>Rotten Tomatoes Rating</dt>
+          <dd>{{movie.tomatoMeter}}</dd>
+
+          <dt>Number of RT Reviews</dt>
+          <dd>{{movie.tomatoReviews}}</dd>
         </dl>
       </div>
   </div>
   <div class="row text-center" style="margin-top:10px">
     <p class="lead">{{movie.Awards}}</p>
     <p>{{movie.Plot}}</p>
+  </div>
+  <br>
+  <div class="row text-center" style="margin-top:10px">
+    <h4>Rotten Tomatoes Consensus</h4>
+    <p>{{movie.tomatoConsensus}}</p>
   </div>
 </div>
