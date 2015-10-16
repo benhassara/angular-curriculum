@@ -5,7 +5,14 @@
       Enter a movie title in the search bar.
     </p>
     <form>
-      <input ng-model="query" type="text" class="form-control" placeholder="Enter a search term">
+      <div class="form-group">
+        <input ng-model="query" type="text" class="form-control" placeholder="Enter a search term">
+      </div>
+      <div class="form-group">
+        <label>
+          <input type="checkbox" ng-model='rottenTomatoes'> Rotten Tomatoes?
+        </label>
+      </div>
       <button ng-click="search()" class="btn btn-primary btn-lg btn-main-search" type="button">Search</button>
     </form>
   </div>
