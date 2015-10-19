@@ -41,7 +41,7 @@
         </thead>
         <tbody>
           <tr ng-repeat="contact in contacts | filter:searchString | orderBy:'name'">
-            <td>{{contact.name}}</td>
+            <td><a ng-href="#/{{contact.id}}">{{contact.name}}</a></td>
             <td>{{contact.email}}</td>
             <td>{{contact.phone}}</td>
           </tr>

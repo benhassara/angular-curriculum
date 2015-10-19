@@ -6,25 +6,29 @@ ContactListFact.$inject = ['$http'];
 
 function ContactListFact($http) {
   var ContactList = {};
+  var current = 3;
 
   ContactList.contactList = [
     {
+      id: 0,
       name: 'Tony Stark',
       email: 'tony@starkindustries.com',
       phone: '123-456-7890',
-      gif: 'http://giphy.com/embed/AbYxDs20DECQw'
+      gif: 'https://media.giphy.com/media/AbYxDs20DECQw/giphy.gif'
     },
     {
+      id: 1,
       name: 'Bill Nye',
       email: 'b.nye@science.com',
       phone: '314-159-2653',
-      gif: 'http://giphy.com/embed/RVqLSBbkI8sKI'
+      gif: 'https://media.giphy.com/media/RVqLSBbkI8sKI/giphy.gif'
     },
     {
+      id: 2,
       name: 'Luke Skywalker',
       email: 'master_skywalker@jedi.org',
       phone: '111-111-1111',
-      gif: 'http://giphy.com/embed/oSa03SaCKYFUc'
+      gif: 'https://media.giphy.com/media/oSa03SaCKYFUc/giphy.gif'
     }
   ];
 
@@ -36,10 +40,12 @@ function ContactListFact($http) {
     // search Giphy for a gif matching the contacts name
     $http.get(url)
       .then(function(response) {
-        if (response.data.data[0].embed_url) {
-          contactGif = response.data.data[0].embed_url;
+        if (response.data.data[0].images.original.url) {
+          contactGif = response.data.data[0].images.original.url;
           obj.gif = contactGif;
         }
+        obj.id = current;
+        current++;
         ContactList.contactList.push(obj);
       });
   };

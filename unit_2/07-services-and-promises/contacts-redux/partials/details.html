@@ -1,0 +1,26 @@
+<div class="container">
+  <br>
+  <div class="row text-center">
+      <a class="btn btn-primary" href="#/">Home</a>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+      <dl class="dl-horizontal">
+        <dt>Name</dt>
+        <dd>{{contact.name}}</dd>
+
+        <dt>Email</dt>
+        <dd>{{contact.email}}</dd>
+
+        <dt>Phone Number</dt>
+        <dd>{{contact.phone}}</dd>
+      </dl>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+      <img class="img-thumbnail" ng-src={{contact.gif}} alt={{contact.name}} />
+    </div>
+  </div>
+</div>
