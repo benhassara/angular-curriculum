@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  app.module('app.core')
+  app.module('app')
     .config(routeConfiguration);
 
   routeConfiguration.$inject = ['$stateProvider', '$urlRouterProvider'];

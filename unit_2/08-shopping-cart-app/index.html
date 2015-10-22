@@ -2,7 +2,7 @@
 <html lang="en" ng-app='app'>
   <head>
     <meta charset="utf-8">
-    <title>Untitled</title>
+    <title>MEAN Tea</title>
 
     <link rel="stylesheet" type="text/css" href="https://bootswatch.com/united/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -10,18 +10,26 @@
   </head>
   <body>
     <navbar></navbar>
-    <ui-view></ui-view>
+    <div ui-view></div>
 
+
+    <page-footer></page-footer>
+
+    <!-- scripts -->
+    <!-- external -->
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js" charset="utf-8"></script>
 
+    <!-- app -->
     <script type="text/javascript" src="app/app.module.js"></script>
 
     <!-- app.layout -->
     <script src="app/layout/layout.module.js" charset="utf-8"></script>
     <script src="app/layout/navbar/navbar.module.js" charset="utf-8"></script>
     <script src="app/layout/navbar/navbar.directive.js" charset="utf-8"></script>
+    <script src="app/layout/pageFooter/pageFooter.module.js" charset="utf-8"></script>
+    <script src="app/layout/pageFooter/pageFooter.directive.js" charset="utf-8"></script>
   </body>
 </html>
