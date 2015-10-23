@@ -9,3 +9,11 @@ footer {
 footer ul { margin-top: 5px; }
 
 footer p { margin-top: 20px; }
+
+#cart-btn {
+  margin-top: 7px;
+}
+
+.fa-shopping-cart {
+  padding: .2em .6em .3em;
+}

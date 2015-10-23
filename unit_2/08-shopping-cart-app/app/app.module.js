@@ -3,7 +3,8 @@
 
   angular.module('app', [
     'ui.router',
-    'app.layout'
+    'app.layout',
+    'app.components'
   ])
     .config(routeConfiguration);
 
