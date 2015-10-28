@@ -2,6 +2,7 @@
   'use strict';
 
   angular.module('app.layout', [
+    'app.core',
     'app.layout.navbar',
     'app.layout.pageFooter'
   ]);

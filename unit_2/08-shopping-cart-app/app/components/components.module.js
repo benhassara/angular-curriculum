@@ -3,6 +3,6 @@
 
   angular.module('app.components', [
     'app.components.searchBar',
-    'app.components.teaRow'
+    'app.components.teaTable'
   ]);
 })();
