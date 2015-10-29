@@ -6,7 +6,7 @@
 
   function teaData() {
     var fact = {};
-    
+
     var data = [
       {
         _id: "55c8ee82152165d244b98300",

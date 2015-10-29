@@ -1,5 +1,8 @@
 (function() {
   'use strict';
 
-  angular.module('app.core', ['app.core.services']);
+  angular.module('app.core', [
+      'app.core.services',
+      'app.core.filters'
+  ]);
 })();

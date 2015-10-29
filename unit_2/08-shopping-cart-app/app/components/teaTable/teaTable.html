@@ -15,7 +15,7 @@
                     <h3 class="item-heading"><strong>{{tea.name}}</strong></h3>
                     <dl class="dl-horizontal">
                         <dt>Price</dt>
-                        <dd>{{tea.price}}</dd>
+                        <dd>{{tea.price / 100 | currency}}</dd>
 
                         <dt>Caffeine Scale</dt>
                         <dd>{{tea.caffeineScale}}</dd>
@@ -27,7 +27,7 @@
                         <dd>{{tea.rating}}</dd>
 
                         <dt>In Stock?</dt>
-                        <dd>{{tea.inStock}}</dd>
+                        <dd>{{tea.inStock | inStock}}</dd>
 
                         <dt>Categories</dt>
                         <dd>{{tea.categories}}</dd>
