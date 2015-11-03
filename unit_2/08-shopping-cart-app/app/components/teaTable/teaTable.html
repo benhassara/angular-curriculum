@@ -30,13 +30,13 @@
                         <dd>{{tea.inStock | inStock}}</dd>
 
                         <dt>Categories</dt>
-                        <dd>{{tea.categories}}</dd>
+                        <dd>{{tea.categories.join(', ')}}</dd>
                     </dl>
                 </div>
                 <div class="col-xs-3 pull-right">
                     <div class="row">
                         <div class="input-group">
-                            <span class="input-group-addon">Quantity: </span>
+                            <span class="input-group-addon"># </span>
                             <input type="number" class="form-control">
                         </div>
                     </div>
