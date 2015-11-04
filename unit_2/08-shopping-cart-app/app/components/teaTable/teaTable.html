@@ -6,47 +6,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="tea in vm.teas">
-            <td class="col-xs-2">
-                <img class="tea-img" ng-src="{{tea.imageUrl}}" alt="{{tea.name}}" />
-            </td>
-            <td>
-                <div class="col-xs-7">
-                    <h3 class="item-heading"><strong>{{tea.name}}</strong></h3>
-                    <dl class="dl-horizontal">
-                        <dt>Price</dt>
-                        <dd>{{tea.price / 100 | currency}}</dd>
-
-                        <dt>Caffeine Scale</dt>
-                        <dd>{{tea.caffeineScale}}</dd>
-
-                        <dt>Ingredients</dt>
-                        <dd>{{tea.ingredients}}</dd>
-
-                        <dt>Rating</dt>
-                        <dd>{{tea.rating}}</dd>
-
-                        <dt>In Stock?</dt>
-                        <dd>{{tea.inStock | inStock}}</dd>
-
-                        <dt>Categories</dt>
-                        <dd>{{tea.categories.join(', ')}}</dd>
-                    </dl>
-                </div>
-                <div class="col-xs-3 pull-right">
-                    <div class="row">
-                        <div class="input-group">
-                            <span class="input-group-addon"># </span>
-                            <input type="number" class="form-control">
-                        </div>
-                    </div>
-                    <div class="row cart-btn">
-                        <div class="btn btn-success btn-block">
-                            <i class="fa fa-cart-plus fa-2x"></i>
-                        </div>
-                    </div>
-                </div>
-            </td>
+        <tr ng-repeat="teaObj in vm.teas" tea-row tea="teaObj">
         </tr>
     </tbody>
 </table>

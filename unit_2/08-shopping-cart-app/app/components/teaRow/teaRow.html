@@ -1,0 +1,40 @@
+<td class="col-xs-2">
+    <img class="tea-img" ng-src="{{vm.tea.imageUrl}}" alt="{{vm.tea.name}}" />
+</td>
+<td>
+    <div class="col-xs-7">
+        <h3 class="item-heading"><strong>{{vm.tea.name}}</strong></h3>
+        <dl class="dl-horizontal">
+            <dt>Price</dt>
+            <dd>{{vm.tea.price / 100 | currency}}</dd>
+
+            <dt>Caffeine Scale</dt>
+            <dd>{{vm.tea.caffeineScale}}</dd>
+
+            <dt>Ingredients</dt>
+            <dd>{{vm.tea.ingredients}}</dd>
+
+            <dt>Rating</dt>
+            <dd>{{vm.tea.rating}}</dd>
+
+            <dt>In Stock?</dt>
+            <dd>{{vm.tea.inStock | inStock}}</dd>
+
+            <dt>Categories</dt>
+            <dd>{{vm.tea.categories.join(', ')}}</dd>
+        </dl>
+    </div>
+    <div class="col-xs-3 pull-right">
+        <div class="row">
+            <div class="input-group">
+                <span class="input-group-addon"># </span>
+                <input ng-model="vm.quantity" type="number" class="form-control">
+            </div>
+        </div>
+        <div class="row cart-btn">
+            <div class="btn btn-success btn-block" ng-click="vm.test()">
+                <i class="fa fa-cart-plus fa-2x"></i>
+            </div>
+        </div>
+    </div>
+</td>
