@@ -3,6 +3,7 @@
 
   angular.module('app', [
     'ui.router',
+    'ui.bootstrap',
     'app.core',
     'app.layout',
     'app.components'

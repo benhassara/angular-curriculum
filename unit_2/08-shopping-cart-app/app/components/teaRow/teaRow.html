@@ -26,9 +26,26 @@
     </div>
     <div class="col-xs-3 pull-right">
         <div class="row">
-            <div class="input-group">
+            <!-- <div class="input-group">
                 <span class="input-group-addon"># </span>
                 <input ng-model="vm.quantity" type="number" class="form-control">
+            </div> -->
+            <div class="btn-group" uib-dropdown>
+                <button uib-dropdown-toggle class="btn btn-primary" type="button">
+                    Quantity: {{vm.quantity}} <span class="caret"></span>
+                </button>
+                <ul class="uib-dropdown-menu" role="menu">
+                    <li role="menuitem" ng-click="vm.setQuantity($event)"><a href>1</a></li>
+                    <li role="menuitem" ng-click="vm.setQuantity($event)"><a href>2</a></li>
+                    <li role="menuitem" ng-click="vm.setQuantity($event)"><a href>3</a></li>
+                    <li role="menuitem" ng-click="vm.setQuantity($event)"><a href>4</a></li>
+                    <li role="menuitem" ng-click="vm.setQuantity($event)"><a href>5</a></li>
+                    <li role="menuitem" ng-click="vm.setQuantity($event)"><a href>6</a></li>
+                    <li role="menuitem" ng-click="vm.setQuantity($event)"><a href>7</a></li>
+                    <li role="menuitem" ng-click="vm.setQuantity($event)"><a href>8</a></li>
+                    <li role="menuitem" ng-click="vm.setQuantity($event)"><a href>9</a></li>
+                    <li role="menuitem" ng-click="vm.setQuantity($event)"><a href>10</a></li>
+                </ul>
             </div>
         </div>
         <div class="row cart-btn">

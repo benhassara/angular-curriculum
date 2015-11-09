@@ -19,5 +19,10 @@
 
     function TeaRowCtrl() {
         var vm = this;
+        vm.quantity = 1;
+
+        vm.setQuantity = function($event) {
+            vm.quantity = $event.target.innerHTML;
+        };
     }
 })();
