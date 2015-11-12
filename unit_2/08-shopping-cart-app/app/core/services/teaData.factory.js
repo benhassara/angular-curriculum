@@ -135,6 +135,17 @@
       return data;
     };
 
+    fact.getCategories = function() {
+        return data.reduce(function(prev, curr) {
+            curr.categories.forEach(function(category) {
+                if (prev.indexOf(category) === -1) {
+                    prev.push(category);
+                }
+            });
+            return prev;
+        }, []);
+    };
+
     return fact;
   }
 })();

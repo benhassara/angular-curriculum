@@ -26,12 +26,8 @@
     </div>
     <div class="col-xs-3 pull-right">
         <div class="row">
-            <!-- <div class="input-group">
-                <span class="input-group-addon"># </span>
-                <input ng-model="vm.quantity" type="number" class="form-control">
-            </div> -->
             <div class="btn-group" uib-dropdown>
-                <button uib-dropdown-toggle class="btn btn-primary" type="button">
+                <button uib-dropdown-toggle class="btn btn-default" type="button">
                     Quantity: {{vm.quantity}} <span class="caret"></span>
                 </button>
                 <ul class="uib-dropdown-menu" role="menu">
@@ -49,7 +45,7 @@
             </div>
         </div>
         <div class="row cart-btn">
-            <div class="btn btn-success btn-block" ng-click="vm.test()">
+            <div class="btn btn-success btn-block" ng-click="vm.addToCart()">
                 <i class="fa fa-cart-plus fa-2x"></i>
             </div>
         </div>

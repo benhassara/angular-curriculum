@@ -1,10 +1,8 @@
 <div class="col-xs-4">
   <div class="form-group">
     <label for="#categories">Search by Category: </label>
-    <select id="categories" class="form-control">
-      <option>option1</option>
-      <option>option2</option>
-      <option>option3</option>
+    <select id="categories" class="form-control" ng-model="vm.category">
+      <option ng-repeat="category in vm.categories" value="{{category}}">{{category}}</option>
     </select>
   </div>
 </div>
@@ -15,7 +13,7 @@
   </div>
 </div>
 <div class="col-xs-4">
-  <a href="#/cart" class="btn btn-info btn-sm btn-block cart-btn">
-    <p class="h4"><span class="label">0</span> <i class="fa fa-shopping-cart"></i></p>
+  <a href ng-click="vm.test()" class="btn btn-info btn-sm btn-block cart-btn">
+    <p class="h4"><span class="label">{{vm.numCartItems()}}</span> <i class="fa fa-shopping-cart"></i></p>
   </a>
 </div>
