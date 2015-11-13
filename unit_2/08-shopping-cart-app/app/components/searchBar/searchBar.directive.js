@@ -15,13 +15,18 @@
         };
     }
 
-    SearchBarCtrl.$inject = ['cart', 'numCartItems', 'teaData'];
+    SearchBarCtrl.$inject = ['cart', 'teaData'];
 
-    function SearchBarCtrl(cart, numCartItems, teaData) {
+    function SearchBarCtrl(cart, teaData) {
         var vm = this;
         vm.categories = teaData.getCategories();
+
         vm.numCartItems = function() {
-            return cart.getNumItems(); 
+            return cart.getNumItems();
+        };
+
+        vm.setCategory = function(e) {
+            console.log(e);
         };
     }
 })();

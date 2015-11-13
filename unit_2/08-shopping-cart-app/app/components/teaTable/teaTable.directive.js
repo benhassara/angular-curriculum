@@ -16,21 +16,16 @@
         };
     }
 
-    TeaTableCtrl.$inject = ['teaData'];
+    TeaTableCtrl.$inject = ['teaData', 'searchValues'];
 
-    function TeaTableCtrl(teaData) {
+    function TeaTableCtrl(teaData, searchValues) {
         var vm = this;
         vm.teas = teaData.getTeaData();
+        vm.getCategory = function() {
+            searchValues.category();
+        };
+        vm.getName = function() {
+            searchValues.name();
+        };
     }
 })();
-
-/* *** Data that needs to be passed in to populate the table data ***
-- img url
-- name of the tea
-- price
-- caffeine scale
-- ingredients
-- rating
-- in stock boolean
-- categories
-*/

@@ -2,7 +2,7 @@
   <div class="form-group">
     <label for="#categories">Search by Category: </label>
     <select id="categories" class="form-control" ng-model="vm.category">
-      <option ng-repeat="category in vm.categories" value="{{category}}">{{category}}</option>
+      <option ng-repeat="category in vm.categories" value="{{category}}" ng-click="vm.setCategory($event)">{{category}}</option>
     </select>
   </div>
 </div>

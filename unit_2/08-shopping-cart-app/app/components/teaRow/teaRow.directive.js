@@ -23,6 +23,10 @@
         var vm = this;
         vm.quantity = 1;
 
+        vm.setQuantity = function($event) {
+            vm.quantity = Number($event.target.innerHTML);
+        };
+
         vm.addToCart = function() {
             cart.addToCart({
                 name: vm.tea.name,

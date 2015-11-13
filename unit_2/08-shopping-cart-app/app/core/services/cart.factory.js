@@ -2,7 +2,6 @@
     'use strict';
 
     angular.module('app.core.services')
-    .value('numCartItems', 0)
     .factory('cart', cartFactory);
 
     function cartFactory() {

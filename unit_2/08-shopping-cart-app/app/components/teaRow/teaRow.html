@@ -1,52 +1,58 @@
 <td class="col-xs-2">
     <img class="tea-img" ng-src="{{vm.tea.imageUrl}}" alt="{{vm.tea.name}}" />
 </td>
-<td>
-    <div class="col-xs-7">
-        <h3 class="item-heading"><strong>{{vm.tea.name}}</strong></h3>
-        <dl class="dl-horizontal">
-            <dt>Price</dt>
-            <dd>{{vm.tea.price / 100 | currency}}</dd>
+<td class="col-xs-10">
+    <div class="row">
+        <div class="col-xs-7">
+            <h3 class="item-heading"><strong>{{vm.tea.name}}</strong></h3>
+            <dl class="dl-horizontal">
+                <dt>Price</dt>
+                <dd>{{vm.tea.price / 100 | currency}}</dd>
 
-            <dt>Caffeine Scale</dt>
-            <dd>{{vm.tea.caffeineScale}}</dd>
+                <dt>Caffeine Scale</dt>
+                <dd>{{vm.tea.caffeineScale}}</dd>
 
-            <dt>Ingredients</dt>
-            <dd>{{vm.tea.ingredients}}</dd>
+                <dt>Ingredients</dt>
+                <dd>{{vm.tea.ingredients}}</dd>
 
-            <dt>Rating</dt>
-            <dd>{{vm.tea.rating}}</dd>
+                <dt>Rating</dt>
+                <dd>{{vm.tea.rating}}</dd>
 
-            <dt>In Stock?</dt>
-            <dd>{{vm.tea.inStock | inStock}}</dd>
+                <dt>In Stock?</dt>
+                <dd>{{vm.tea.inStock | inStock}}</dd>
 
-            <dt>Categories</dt>
-            <dd>{{vm.tea.categories.join(', ')}}</dd>
-        </dl>
-    </div>
-    <div class="col-xs-3 pull-right">
-        <div class="row">
-            <div class="btn-group" uib-dropdown>
-                <button uib-dropdown-toggle class="btn btn-default" type="button">
-                    Quantity: {{vm.quantity}} <span class="caret"></span>
-                </button>
-                <ul class="uib-dropdown-menu" role="menu">
-                    <li role="menuitem" ng-click="vm.setQuantity($event)"><a href>1</a></li>
-                    <li role="menuitem" ng-click="vm.setQuantity($event)"><a href>2</a></li>
-                    <li role="menuitem" ng-click="vm.setQuantity($event)"><a href>3</a></li>
-                    <li role="menuitem" ng-click="vm.setQuantity($event)"><a href>4</a></li>
-                    <li role="menuitem" ng-click="vm.setQuantity($event)"><a href>5</a></li>
-                    <li role="menuitem" ng-click="vm.setQuantity($event)"><a href>6</a></li>
-                    <li role="menuitem" ng-click="vm.setQuantity($event)"><a href>7</a></li>
-                    <li role="menuitem" ng-click="vm.setQuantity($event)"><a href>8</a></li>
-                    <li role="menuitem" ng-click="vm.setQuantity($event)"><a href>9</a></li>
-                    <li role="menuitem" ng-click="vm.setQuantity($event)"><a href>10</a></li>
-                </ul>
-            </div>
+                <dt>Categories</dt>
+                <dd>{{vm.tea.categories.join(', ')}}</dd>
+            </dl>
         </div>
-        <div class="row cart-btn">
-            <div class="btn btn-success btn-block" ng-click="vm.addToCart()">
-                <i class="fa fa-cart-plus fa-2x"></i>
+        <div class="col-xs-5">
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="btn-group" uib-dropdown>
+                        <button uib-dropdown-toggle class="btn btn-default" type="button">
+                            Quantity: {{vm.quantity}} <span class="caret"></span>
+                        </button>
+                        <ul class="uib-dropdown-menu" role="menu">
+                            <li role="menuitem" ng-click="vm.setQuantity($event)"><a href>1</a></li>
+                            <li role="menuitem" ng-click="vm.setQuantity($event)"><a href>2</a></li>
+                            <li role="menuitem" ng-click="vm.setQuantity($event)"><a href>3</a></li>
+                            <li role="menuitem" ng-click="vm.setQuantity($event)"><a href>4</a></li>
+                            <li role="menuitem" ng-click="vm.setQuantity($event)"><a href>5</a></li>
+                            <li role="menuitem" ng-click="vm.setQuantity($event)"><a href>6</a></li>
+                            <li role="menuitem" ng-click="vm.setQuantity($event)"><a href>7</a></li>
+                            <li role="menuitem" ng-click="vm.setQuantity($event)"><a href>8</a></li>
+                            <li role="menuitem" ng-click="vm.setQuantity($event)"><a href>9</a></li>
+                            <li role="menuitem" ng-click="vm.setQuantity($event)"><a href>10</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row cart-btn">
+                <div class="col-xs-10">
+                    <div class="btn btn-success btn-block" ng-click="vm.addToCart()">
+                        <i class="fa fa-cart-plus fa-2x"></i>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
