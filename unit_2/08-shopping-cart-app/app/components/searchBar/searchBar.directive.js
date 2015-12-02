@@ -15,9 +15,9 @@
         };
     }
 
-    SearchBarCtrl.$inject = ['cart', 'teaData'];
+    SearchBarCtrl.$inject = ['cart', 'teaData', 'searchValues'];
 
-    function SearchBarCtrl(cart, teaData) {
+    function SearchBarCtrl(cart, teaData, searchValues) {
         var vm = this;
         vm.categories = teaData.getCategories();
 
@@ -25,8 +25,12 @@
             return cart.getNumItems();
         };
 
-        vm.setCategory = function(e) {
-            console.log(e);
+        vm.updateCategory = function() {
+            searchValues.category(vm.category);
+        };
+
+        vm.updateName = function() {
+            searchValues.name(vm.searchName);
         };
     }
 })();

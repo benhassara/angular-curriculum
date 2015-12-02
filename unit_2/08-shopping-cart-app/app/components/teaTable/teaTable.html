@@ -6,7 +6,9 @@
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="teaObj in vm.teas" tea-row tea="teaObj">
+        <tr ng-repeat="teaObj in vm.teas | filter:vm.catSearch | filter: vm.nameSearch"
+            tea-row
+            tea="teaObj">
         </tr>
     </tbody>
 </table>
