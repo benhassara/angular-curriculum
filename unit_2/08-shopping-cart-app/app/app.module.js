@@ -24,7 +24,7 @@
     })
     .state('cart', {
       url: '/cart',
-      templateUrl: 'app/layout/cart/index.html'
+      templateUrl: 'app/layout/cart/cart.html'
     });
   }
 }());
