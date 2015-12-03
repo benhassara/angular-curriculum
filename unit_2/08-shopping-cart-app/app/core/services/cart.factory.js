@@ -20,6 +20,12 @@
             return items.length;
         };
 
+        factory.getCartTotal = function() {
+            return items.reduce(function(prev, curr) {
+                return prev + curr.product.price;
+            }, 0);
+        };
+
         return factory;
     }
 })();

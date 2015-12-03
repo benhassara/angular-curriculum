@@ -29,9 +29,7 @@
 
         vm.addToCart = function() {
             cart.addToCart({
-                name: vm.tea.name,
-                imageUrl: vm.tea.imageUrl,
-                price: vm.tea.price,
+                product: vm.tea,
                 quantity: +vm.quantity
             });
         };
